@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 366577787}
   - component: {fileID: 366577786}
   - component: {fileID: 366577789}
+  - component: {fileID: 366577790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -788,6 +789,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &366577790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366577785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78cd474fc7653458531657277a5eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
 --- !u!1 &381551795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1020,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 477892617}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1020027669}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &477892617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,7 +1153,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 481964503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366577790}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1727774006}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &481964503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 718776375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366577790}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 963586061}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &718776375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,6 +1747,54 @@ RectTransform:
   m_AnchoredPosition: {x: -52.1, y: 17.599993}
   m_SizeDelta: {x: 74.8348, y: 118.7169}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1020027668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1020027670}
+  - component: {fileID: 1020027669}
+  m_Layer: 5
+  m_Name: Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1020027669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020027668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc29781ef93f08145a1464eb6c57a549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &1020027670
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020027668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1727774006}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1113545882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credit
+  m_text: 'Setting
 
 '
   m_isRightToLeft: 0
@@ -2408,6 +2506,7 @@ RectTransform:
   m_LocalScale: {x: 0.31639075, y: 0.361758, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1020027670}
   - {fileID: 477892615}
   - {fileID: 1859055918}
   - {fileID: 718776373}
@@ -2501,7 +2600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1859055920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366577790}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 760317593}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1859055920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2622,7 +2733,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954780168}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366577790}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: LookAt
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1727774006}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954780168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,7 +2866,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2097176404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1020027669}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2097176404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2839,7 +2974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Setting
+  m_text: 'Credit
 
 '
   m_isRightToLeft: 0
