@@ -10,6 +10,10 @@ public class UIMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void Retry()
+    {
+        SceneManager.LoadScene("Dzaky");
+    }
 
     public void QuitGame()
     {

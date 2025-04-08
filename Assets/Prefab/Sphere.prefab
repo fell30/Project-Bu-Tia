@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 1
   DragForce: 0.88
-  Damage: 9
+  Damage: 4
 --- !u!1001 &8724242973395408637
 PrefabInstance:
   m_ObjectHideFlags: 0

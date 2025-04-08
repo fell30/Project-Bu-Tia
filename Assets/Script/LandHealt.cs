@@ -21,8 +21,7 @@ public class LandHealth : MonoBehaviour
     // Fungsi untuk menghancurkan tanah jika health habis
     private void DestroyLand()
     {
-        Debug.Log("Tanah hancur!");
-        Destroy(gameObject); // Hancurkan objek tanah ketika health habis
+        ScoreManager.Instance.GameOver();
     }
 
     // Fungsi untuk memperbarui health bar

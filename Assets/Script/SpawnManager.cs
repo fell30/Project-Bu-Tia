@@ -24,4 +24,11 @@ public class SpawnManager : MonoBehaviour
 
         Instantiate(randomObject, randomSpawnPoint.position, randomSpawnPoint.rotation);
     }
+
+    // Fungsi untuk menghentikan spawn
+    public void StopSpawning()
+    {
+        CancelInvoke(nameof(SpawnObject)); // Menghentikan panggilan fungsi InvokeRepeating
+        Debug.Log("Spawn berhenti");
+    }
 }
