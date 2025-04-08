@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UIMenu.unity
     guid: 607159cc72cda474cb0c420bb5f55a45
   - enabled: 1
-    path: Assets/Scenes/Rashel.unity
+    path: Assets/Scenes/Dzaky.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
