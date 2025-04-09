@@ -52,7 +52,7 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (scoreText) scoreText.text = "Score: " + score;
+        if (scoreText) scoreText.text = "" + score;
         if (highScoreText) highScoreText.text = "High Score: " + highScore;
     }
 
