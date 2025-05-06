@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UIMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayGame(string nameScene)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(nameScene);
     }
     public void Retry()
     {
