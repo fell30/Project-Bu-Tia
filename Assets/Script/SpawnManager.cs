@@ -4,7 +4,19 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectsToSpawn;
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private float spawnInterval = 2f;
+    [SerializeField] private float spawnInterval;
+    [SerializeField] private float WaveTime = 5f;
+    [SerializeField] private float SpawnIntervalWave;
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            spawnInterval = SpawnIntervalWave;
+            Debug.Log("Spawn interval diubah menjadi 0.5 detik");
+            CancelInvoke(nameof(SpawnObject));
+            InvokeRepeating(nameof(SpawnObject), 0f, spawnInterval);
+        }
+    }
 
     private void Start()
     {
@@ -25,10 +37,10 @@ public class SpawnManager : MonoBehaviour
         Instantiate(randomObject, randomSpawnPoint.position, randomSpawnPoint.rotation);
     }
 
-    // Fungsi untuk menghentikan spawn
     public void StopSpawning()
     {
-        CancelInvoke(nameof(SpawnObject)); // Menghentikan panggilan fungsi InvokeRepeating
+        CancelInvoke(nameof(SpawnObject));
         Debug.Log("Spawn berhenti");
     }
+
 }

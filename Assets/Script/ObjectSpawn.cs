@@ -6,7 +6,7 @@ public class ObjectSpawn : MonoBehaviour
     [SerializeField] private float DragForce = 1f;
     public int Damage;
     private Rigidbody rb;
-    private LandHealth landHealth; // Komponen untuk mengakses kesehatan tanah
+    private LandHealth landHealth;
 
     void Start()
     {
@@ -16,19 +16,19 @@ public class ObjectSpawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Projectile"))
         {
             ScoreManager.Instance.AddScore(scoreValue);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Destroyer"))
         {
-            // Cek apakah objek tanah ada di bawah dan mengurangi health tanah
-            landHealth = other.GetComponent<LandHealth>(); // Dapatkan komponen LandHealth dari objek yang memiliki tag "Destroyer"
+
+            landHealth = other.GetComponent<LandHealth>();
             if (landHealth != null)
             {
                 landHealth.TakeDamage(Damage);
-                Debug.Log("Damage to land: " + Damage); // Debug log untuk melihat damage yang diterima tanah
+                Debug.Log("Damage to land: " + Damage);
             }
             Destroy(gameObject);
         }
