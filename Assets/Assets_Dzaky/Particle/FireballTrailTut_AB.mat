@@ -47,10 +47,10 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Blend: 2
+    - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _MainTexPower: 1
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -60,7 +60,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 2.6949134, g: 0.21669729, b: 2.996079, a: 0.3921569}
+    - _Color: {r: 0.6737282, g: 0.05417431, b: 0.7490196, a: 0.3921569}
     - _MainTexSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _MainTexTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
