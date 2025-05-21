@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 8426cf3d3939a7d419671f3d5c269c0b, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 023808db2bfa00d44929aa2176d29c76, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1136,11 +1136,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 597068619}
     m_Modifications:
-    - target: {fileID: -7511558181221131132, guid: 808c0cba437ed7047abb888d43e4ec46,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 218681ce4ce82b54b9ee88570fd2bfd2, type: 2}
     - target: {fileID: -9042587762045654420, guid: 998c615b4efa59e4da0785fd421b38cf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1247,6 +1242,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 218681ce4ce82b54b9ee88570fd2bfd2, type: 2}
     - target: {fileID: 6761708314861323176, guid: 998c615b4efa59e4da0785fd421b38cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 218681ce4ce82b54b9ee88570fd2bfd2, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 808c0cba437ed7047abb888d43e4ec46,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
