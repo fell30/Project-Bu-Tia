@@ -15,6 +15,15 @@ public class UIMenu : MonoBehaviour
         SceneManager.LoadScene("Dzaky");
     }
 
+    public void EnableMenu(GameObject menu)
+    {
+        menu.SetActive(true);
+    }
+    public void DisableMenu(GameObject menu)
+    {
+        menu.SetActive(false);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
