@@ -53,7 +53,7 @@ public class ScoreManager : MonoBehaviour
     private void UpdateUI()
     {
         if (scoreText) scoreText.text = "" + score;
-        if (highScoreText) highScoreText.text = "High Score: " + highScore;
+        if (highScoreText) highScoreText.text = highScore.ToString();
     }
 
     // Fungsi untuk menambahkan animasi pada perubahan skor
@@ -66,7 +66,7 @@ public class ScoreManager : MonoBehaviour
             scoreText.transform.DOScale(1.2f, 0.2f).OnKill(() => scoreText.transform.DOScale(1f, 0.1f)); // Membesar dan kembali ke ukuran semula
 
             // Efek warna dengan DOTween
-            scoreText.DOColor(Color.green, 0.2f).OnKill(() => scoreText.DOColor(Color.black, 0.2f)); // Merubah warna teks
+            scoreText.DOColor(Color.green, 0.2f).OnKill(() => scoreText.DOColor(Color.white, 0.2f)); // Merubah warna teks
         }
 
         // Animasi untuk high score (jika ingin efek serupa pada high score)

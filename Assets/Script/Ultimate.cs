@@ -15,9 +15,21 @@ public class Ultimate : MonoBehaviour
     public RenderTexture UltimateRawImage;
     public float CooldownTime;
     public float TimeUltimate;
+    [SerializeField] private float darkExposure = 0.1f; // Exposure untuk skybox gelap
+    [SerializeField] private float darkDuration = 3f; // Durasi skybox gelap (detik)
+    [SerializeField] private float transitionDuration = 1f; // Durasi transisi (detik)
+    private float originalExposure; // Menyimpan exposure asli
+    private Material originalSkybox; // Menyimpan skybox asli
 
     private float currentRotationX = 0f;
     private int spawnIndex = 0;
+
+    void Start()
+    {
+        // Simpan exposure dan skybox awal
+        originalExposure = RenderSettings.skybox.GetFloat("_Exposure");
+        originalSkybox = RenderSettings.skybox;
+    }
 
     void Update()
     {
@@ -26,16 +38,16 @@ public class Ultimate : MonoBehaviour
         currentRotationX = Mathf.Clamp(currentRotationX, -30f, 60f);
         transform.localRotation = Quaternion.Euler(currentRotationX, 0f, 0f);
 
-
         if (Input.GetKeyDown(KeyCode.Space) && CooldownTime > TimeUltimate)
         {
             StartCoroutine(UltimateCombo());
             CooldownTime = 0f;
-
         }
     }
+
     private IEnumerator UltimateCombo()
     {
+        // Mainkan video ultimate terlebih dahulu
         videoPlayer.targetTexture = UltimateRawImage;
         videoPlayer.Prepare();
 
@@ -46,18 +58,50 @@ public class Ultimate : MonoBehaviour
         }
 
         videoPlayer.time = 0; // Set ke waktu awal sebelum play
-
         videoPlayer.Play();
-
         VideoUltimate.SetActive(true);
 
+        // Tunggu sampai video selesai
         yield return new WaitForSeconds((float)videoPlayer.length);
 
         VideoUltimate.SetActive(false);
+
+        // Transisi menuju skybox gelap
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / transitionDuration;
+            float newExposure = Mathf.Lerp(originalExposure, darkExposure, t);
+            RenderSettings.skybox.SetFloat("_Exposure", newExposure);
+            DynamicGI.UpdateEnvironment();
+            yield return null;
+        }
+
+        // Pastikan exposure benar-benar mencapai nilai gelap
+        RenderSettings.skybox.SetFloat("_Exposure", darkExposure);
+        DynamicGI.UpdateEnvironment();
+
+        // Jalankan ultimate magic shoot
         Ultimate_MagicShoot();
 
-    }
+        // Tunggu durasi gelap (misalnya 3 detik)
+        yield return new WaitForSeconds(darkDuration);
 
+        // Transisi kembali ke exposure asli
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / transitionDuration;
+            float newExposure = Mathf.Lerp(darkExposure, originalExposure, t);
+            RenderSettings.skybox.SetFloat("_Exposure", newExposure);
+            DynamicGI.UpdateEnvironment();
+            yield return null;
+        }
+
+        // Pastikan exposure kembali ke nilai asli
+        RenderSettings.skybox.SetFloat("_Exposure", originalExposure);
+        DynamicGI.UpdateEnvironment();
+    }
 
     private void Ultimate_MagicShoot()
     {
